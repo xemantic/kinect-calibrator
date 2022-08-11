@@ -4,10 +4,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 import org.jetbrains.kotlin.utils.addToStdlib.ifTrue
 
-group = "org.openrndr.template"
+group = "com.xemantic.openrndr"
 version = "0.4.0"
 
-val applicationMainClass = "TemplateProgramKt"
+val applicationMainClass = "com.xemantic.kinect.KinectCalibratorKt"
 
 /**  ## additional ORX features to be added to this project */
 val orxFeatures = setOf(
@@ -31,7 +31,7 @@ val orxFeatures = setOf(
 //  "orx-jumpflood",
 //  "orx-kdtree",
 //  "orx-keyframer",      
-//  "orx-kinect-v1",
+    "orx-kinect-v1",
 //  "orx-kotlin-parser",
 //  "orx-mesh-generators",
 //  "orx-midi",
@@ -127,10 +127,10 @@ dependencies {
 // ------------------------------------------------------------------------------------------------------------------ //
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
 }
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "11"
 }
 
 // ------------------------------------------------------------------------------------------------------------------ //
